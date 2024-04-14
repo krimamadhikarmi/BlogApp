@@ -19,16 +19,18 @@ export function Project() {
         description:"A tool for transforming CSS with JavaScript"
     }
   ];
+
+  const limitProjects = projects.length > 3;
   return (
     <>
-    <div class="container mx-auto">
-      <div class="pb-16 lg:pb-20">
-        <div class="flex items-center pb-6">
+    <div className="container mx-auto">
+      <div className="pb-16 lg:pb-20">
+        <div className="flex items-center pb-6">
           <img src="/assets/img/icon-project.png" alt="icon story" />
-          <h3 class="ml-3 font-body text-2xl font-semibold text-primary dark:text-white">
+          <h3 className="ml-3 font-body text-2xl font-semibold text-primary dark:text-white">
             My Projects
           </h3>
-        {projects.length > 4 ? (
+        {projects.length > 3 ? (
         <a href="/blog" className="flex items-center pl-10 font-body italic text-green transition-colors hover:text-secondary dark:text-green-light dark:hover:text-secondary">
           All Projects
           <img
@@ -40,7 +42,7 @@ export function Project() {
       ) : null}
         </div>
       </div>
-      <ProjectList projects={projects} />
+      <ProjectList projects={projects} limitProjects={limitProjects} />
     </div>
     </>
   );

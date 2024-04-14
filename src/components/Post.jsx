@@ -18,9 +18,14 @@ export function Post() {
       date: "June 26, 2020",
       readtime: "3 min read",
     },
+    {
+      description: "Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies",
+      date: "June 26, 2020",
+      readtime: "3 min read",
+    }
   ];
 
-
+  const limitPosts = posts.length > 3;
   return (
     <div className="container mx-auto">
       <div className="py-16 lg:py-20">
@@ -36,9 +41,8 @@ export function Post() {
               />
             </a>
           ) : null}
-          
         </div>
-        <Category posts={posts} />
+        <Category posts={posts} limitPosts={limitPosts} />
       </div>
     </div>
   );

@@ -1,10 +1,12 @@
 import { ProjectDetails } from "./ProjectDetails";
 
-export function ProjectList({projects}){
+export function ProjectList({projects,limitProjects}){
+    const displayedProjects = limitProjects ? projects.slice(0, 2) : projects;
     return(
      <>
-      {projects.map((project) => (
+      {displayedProjects.map((project,index) => (
         <ProjectDetails
+          key={index}
           title={project.title}
           description={project.description}
         />
